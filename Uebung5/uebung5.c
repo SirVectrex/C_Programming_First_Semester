@@ -13,7 +13,7 @@ void binary2dec();
 void int2asci();
 
 
-int main() {
+void ue5_starter() {
     // to allow debugging with CLION
     setbuf(stdout, 0);
     int choice = 0;
@@ -23,32 +23,31 @@ int main() {
     switch (choice) {
         case 1:
             shapes();
-            main();
+            ue5_starter();
             break;
         case 2:
             teiler();
-            main();
+            ue5_starter();
             break;
         case 3:
             kgv();
-            main();
+            ue5_starter();
             break;
         case 4:
             binary2dec();
-            main();
+            ue5_starter();
             break;
         case 5:
             int2asci();
-            main();
+            ue5_starter();
             break;
         case 6:
             printf("Bye");
             break;
         default:
             printf("please enter a valid number.\n\n");
-            main();
+            ue5_starter();
     }
-    return 0;
 }
 
 void shapes(){

@@ -3,6 +3,7 @@
 //
 
 #include "uebung3.h"
+#include "../Uebung2/uebung2.h"
 
 //
 // Created by flori on 03.11.2020.
@@ -15,7 +16,7 @@ void equation();
 void minmax();
 void triangles();
 
-int main() {
+void main() {
     int choice = 0;
     printf("\nWelcome!\n\nSelect your desired program: \n--Triangle Info.(1)\n--Minimum-Maximum Searches.(2)\n--Equation solving.(3)\n--Calculator.(4)\n---Exit.(5)\n");
     scanf_s("%i",&choice);
@@ -45,7 +46,6 @@ int main() {
             printf("please enter a valid number.\n\n");
             main();
     }
-    return 0;
 }
 
 void triangles(){

@@ -15,7 +15,7 @@ void arithmetic_average();
 void order_classification();
 void floyd(); //works fine
 
-int main() {
+void ue4_starter() {
     setbuf(stdout, 0);
     int choice = 0;
     printf("\nWelcome!\n\nSelect your desired program: \n--Order Classification.(1)\n--Arithmetic Average.(2)\n--Fibonacci.(3)\n--Floyd-Triangle.(4)\n---Exit.(5)\n");
@@ -24,19 +24,19 @@ int main() {
     switch (choice) {
         case 1:
             order_classification();
-            main();
+            ue4_starter();
             break;
         case 2:
             arithmetic_average();
-            main();
+            ue4_starter();
             break;
         case 3:
             fibonacci();
-            main();
+            ue4_starter();
             break;
         case 4:
             floyd();
-            main();
+            ue4_starter();
             break;
         case 5:
             printf("Bye.");
@@ -44,9 +44,8 @@ int main() {
 
         default:
             printf("please enter a valid number.\n\n");
-            main();
+            ue4_starter();
     }
-    return 0;
 }
 
 void order_classification(){

@@ -7,4 +7,5 @@
     void task1();
     void task2();
     void task3();
+    void ue2starter();
 #endif //PG1_UEBUNG2_H
