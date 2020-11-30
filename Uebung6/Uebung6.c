@@ -6,7 +6,7 @@
 #include <math.h>
 
 
-void equation();
+void ue_6_equation();
 void dec2bin();
 void binarysum();
 long  binary2dec(int lenght);
@@ -50,7 +50,7 @@ int ue6_starter() {
     return 0;
 }
 
-void equation(){
+void ue_6_equation(){
     double a,b,c, result;
     printf("Welcome - Please enter a,b,c");
     scanf_s("%lf", &a);

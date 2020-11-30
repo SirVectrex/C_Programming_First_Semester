@@ -45,11 +45,10 @@ void task3(){
 }
 
 
-int ue2starter() {
+void ue2starter() {
     printf("Hello User!\nLets go through the Tasks!\n\n");
     task1();
     task2();
     task3();
-    return 0;
 }
 

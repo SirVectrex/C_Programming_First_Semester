@@ -4,5 +4,11 @@
 
 #ifndef PG1_UEBUNG5_H
 #define PG1_UEBUNG5_H
+    void teiler();
+    void shapes();
+    void kgv();
+    void binary2dec();
+    void int2asci();
+    void ue_5_starter();
 
 #endif //PG1_UEBUNG5_H
