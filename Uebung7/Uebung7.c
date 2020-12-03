@@ -45,16 +45,30 @@ int ue6_starter() {
 
 
 void kegel(){
-    int lenght = 0;
-    printf("Please enter the temperature to convert from °Celsius to Fahrenheit and Kelvin");
-    scanf_s("%lf", &temperature);
+    int lenght = 0, innerspaces = 1, outerspace;
+    printf("Please enter the height of the pyramid");
+    scanf_s("%d", &lenght);
+    outerspace = lenght;
+    for (int i = 0; i < lenght+1; ++i) {
+        if(i == lenght+1){
+            printf("_/");
+            for (int j = 0; j < innerspaces; ++j) printf(" ");
+            printf("\\_");
+        }
+        else if(i == 0) {
+            for (int j = 0; j < outerspace; ++j) printf(" ");
+            printf("_");
+        }
+        else {
+            for (int j = 0; j < outerspace; ++j) printf(" ");
+            printf(("/"));
+            for (int j = 0; j < innerspaces; ++j) printf(" ");
+            printf('\\');
 
-        _
-       / \
-      /   \
-    _/     \_
-
-
+        }
+        innerspaces =+2 ;
+        outerspace--;
+    }
 }
 
 void schaltjahr(){
