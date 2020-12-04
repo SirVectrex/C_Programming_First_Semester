@@ -7,5 +7,5 @@
 void kegel();
 void schaltjahr();
 void temperature();
-int ue6_starter();
+int ue7_starter();
 #endif //PG1_UEBUNG7_H

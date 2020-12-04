@@ -1,6 +1,3 @@
-//
-// Created by flori on 30.11.2020.
-//
 #include "Uebung7.h"
 #include <stdio.h>
 
@@ -9,64 +6,63 @@ void schaltjahr();
 void temperature();
 
 
-int ue6_starter() {
+int ue7_starter() {
     // to allow debugging with CLION
     setbuf(stdout, 0);
 
     int choice = 0;
-    printf("\n\nWelcome!\n\nSelect your desired program: \n--Equation Solving.(1)\n--Decimal to Binary.(2)\n--Binary Addition.(3)\n--Logarithms.(4)\n--- Exit (5)\n");
+    printf("\n\nWelcome!\n\nSelect your desired program: \n--Kegel.(1)\n--Schaltjahr.(2)\n--Temperatur.(3)\n--- Exit (4)\n");
     scanf_s("%i",&choice);
 
     switch (choice) {
         case 1:
             kegel();
-            ue6_starter();
+            ue7_starter();
             break;
         case 2:
             schaltjahr();
-            ue6_starter();
+            ue7_starter();
             break;
         case 3:
             temperature();
-            ue6_starter();
+            ue7_starter();
             break;
         case 4:
             printf("Bye");
             break;
         default:
             printf("please enter a valid number.\n\n");
-            ue6_starter();
+            ue7_starter();
 
     }
 
     return 0;
 }
 
-
-
 void kegel(){
     int lenght = 0, innerspaces = 1, outerspace;
     printf("Please enter the height of the pyramid");
     scanf_s("%d", &lenght);
-    outerspace = lenght;
-    for (int i = 0; i < lenght+1; ++i) {
-        if(i == lenght+1){
+    outerspace = lenght+1;
+    for (int i = 0; i <= lenght; ++i) {
+        if(i == lenght){
             printf("_/");
             for (int j = 0; j < innerspaces; ++j) printf(" ");
-            printf("\\_");
+            printf("\\_\n");
+            innerspaces = innerspaces +2 ;
         }
         else if(i == 0) {
             for (int j = 0; j < outerspace; ++j) printf(" ");
-            printf("_");
+            printf("_\n");
         }
         else {
             for (int j = 0; j < outerspace; ++j) printf(" ");
             printf(("/"));
             for (int j = 0; j < innerspaces; ++j) printf(" ");
-            printf('\\');
+            printf("\\\n");
+            innerspaces = innerspaces +2 ;
 
         }
-        innerspaces =+2 ;
         outerspace--;
     }
 }
@@ -89,7 +85,8 @@ void temperature(){
         printf("Please enter a temperature that is actually existant.");
     }
     else{
-        printf("Fahrenheit: %lf.2", (9/5)*temperature +32);
-        printf("Kelvin: %lf.2", temperature + 273.15);
+        double fahrenheit = 1.8 * temperature + 32;
+        printf("Fahrenheit: %.2lf - ", fahrenheit);
+        printf("Kelvin: %.2lf ", temperature + 273.15);
     }
 }
