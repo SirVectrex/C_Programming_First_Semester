@@ -16,7 +16,7 @@ void equation();
 void minmax();
 void triangles();
 
-void main() {
+void ue3_starter() {
     int choice = 0;
     printf("\nWelcome!\n\nSelect your desired program: \n--Triangle Info.(1)\n--Minimum-Maximum Searches.(2)\n--Equation solving.(3)\n--Calculator.(4)\n---Exit.(5)\n");
     scanf_s("%i",&choice);
@@ -24,19 +24,19 @@ void main() {
     switch (choice) {
         case 1:
             triangles();
-            main();
+            ue3_starter();
             break;
         case 2:
             minmax();
-            main();
+            ue3_starter();
             break;
         case 3:
             equation();
-            main();
+            ue3_starter();
             break;
         case 4:
             calculator();
-            main();
+            ue3_starter();
             break;
         case 5:
             printf("Bye.");
@@ -44,7 +44,7 @@ void main() {
 
         default:
             printf("please enter a valid number.\n\n");
-            main();
+            ue3_starter();
     }
 }
 

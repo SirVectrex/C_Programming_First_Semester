@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include "Uebung6/Uebung6.h"
+#include "Uebung7/Uebung7.h"
 int main() {
+    ue7_starter();
 
-    binarysum();
 
     return 0;
 }

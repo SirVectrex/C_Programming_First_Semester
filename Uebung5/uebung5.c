@@ -9,7 +9,7 @@
 void teiler();
 void shapes();
 void kgv();
-void binary2dec();
+void binary2dec1();
 void int2asci();
 
 
@@ -34,7 +34,7 @@ void ue5_starter() {
             ue5_starter();
             break;
         case 4:
-            binary2dec();
+            binary2dec1();
             ue5_starter();
             break;
         case 5:
@@ -139,7 +139,7 @@ void kgv(){
     printf("The smallest common multiple is: %i", result);
 }
 
-void binary2dec(){
+void binary2dec1(){
     int lenght = 0, input= 0 ;
     long res = 0;
     printf("Please enter the amount of digits to enter: \n");

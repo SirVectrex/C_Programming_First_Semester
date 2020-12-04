@@ -7,7 +7,7 @@
     void teiler();
     void shapes();
     void kgv();
-    void binary2dec();
+    void binary2dec1();
     void int2asci();
     void ue_5_starter();
 
