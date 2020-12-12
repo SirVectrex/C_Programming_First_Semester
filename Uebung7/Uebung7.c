@@ -4,14 +4,18 @@
 void kegel();
 void schaltjahr();
 void temperature();
+int error = 0;
+int errorquest(){
+    if(error == 1) return 1;
+    else return 0;
+};
 
-
-int ue7_starter() {
+int ue7_starter() { // should act as main for excercise fufillment
     // to allow debugging with CLION
     setbuf(stdout, 0);
 
     int choice = 0;
-    printf("\n\nWelcome!\n\nSelect your desired program: \n--Kegel.(1)\n--Schaltjahr.(2)\n--Temperatur.(3)\n--- Exit (4)\n");
+    printf("\n\nWelcome!\n\nSelect your desired program: \n--Kegel.(1)\n--Schaltjahr.(2)\n--Temperatur.(3)\n--Calculator (4) \n--- Exit (4)\n");
     scanf_s("%i",&choice);
 
     switch (choice) {
