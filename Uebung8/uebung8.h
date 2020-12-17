@@ -10,6 +10,7 @@ int biggest_number();
 void pow_user_int();
 long pow();
 int errorquest();
+int ue8_starter();
 
 
 #endif //PG1_UEBUNG8_H

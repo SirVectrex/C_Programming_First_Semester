@@ -23,7 +23,7 @@ int ue8_starter() {
     setbuf(stdout, 0);
 
     int choice = 0;
-    printf("\n\nWelcome!\n\nSelect your desired program: \n--Average of numbers.(1)\n--Biggest of five.(2)\n--Pows.(3)\n-- Calculator (5)\n--- Exit (6)");
+    printf("\n\nWelcome!\n\nSelect your desired program: \n--Average of numbers.(1)\n--Biggest of five.(2)\n--Pows.(3)\n-- Calculator (4)\n--- Exit (5)");
     scanf_s("%i",&choice);
 
     switch (choice) {
@@ -34,7 +34,7 @@ int ue8_starter() {
             break;
         case 2:
             int case2_numbers[5] = {1,2,3,4,5};
-            biggest_number(case2_numbers);
+            printf("The biggest number is: %d", biggest_number(case2_numbers));
             ue8_starter();
             break;
         case 3:
@@ -53,7 +53,6 @@ int ue8_starter() {
             ue8_starter();
 
     }
-
     return 0;
 }
 
@@ -81,27 +80,42 @@ int biggest_number(int numbers[5]){
 void pow_user_int(){
     int a, b;
     // TO DO: ADD USER INTERACTION
-    pow(a, b);
+    printf("Please enter the two operands to pow. Start with base a.");
+    scanf_s("%d", &a);
+    printf("\nAnd b:");
+    scanf_s("%d", &b);
+    printf("\nResult is: %d", pow(a,b));
+    if(errorquest() == 1){
+        printf("Watch out - an Error has occured!");
+    }
 }
 
 long pow(int a, int b){
     // TO DO: ADD ERROR HANDLING OF FALSE INPUTS
-    long res = 1;
-    for (int i = 0; i < b; ++i) {
-        res = res * a;
+    if (b < 0 || a <= 0 ) {
+        printf("Error whilst trying to pow. Please change the input");
+        error = 1;
     }
-    return res;
+    else {
+        long res = 1;
+        for (int i = 0; i < b; ++i) {
+            res = res * a;
+        }
+        return res;
+    }
 }
 
 void rechner_starten(){
+    float number1, number2;
     printf("Welcome! What arithmetic operation do you want to do?('+', '-', '*', '/', '^') ");
-    char operation;
-    scanf_s("%c", &operation);
-    printf("Please enter the two operands. Start with a.");
-    float a,b;
-    scanf_s("%lf", &a);
+    char operation = '+';
+    scanf_s(" %c", &operation);
+    printf("%c", operation);
+    printf("\nPlease enter the two operands. Start with a.");
+    scanf_s("%f", &number1);
     printf("\nNext one:");
-    scanf_s("%lf", &b);
+    scanf_s("%f", &number2);
+    printf("Result: %f", rechnet(operation, number1, number2));
 }
 
 float rechnet(char operation, float op1, float op2){
