@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include "Uebung7/Uebung7.h"
-#include "Uebung8/uebung8.h"
-int main() {
+#include "Uebung10/Uebung10.h"
 
-    ue8_starter();
+
+int main() {
+    ue10_starter();
 
 
     return 0;

@@ -4,11 +4,6 @@
 void kegel();
 void schaltjahr();
 void temperature();
-int error = 0;
-int errorquest(){
-    if(error == 1) return 1;
-    else return 0;
-};
 
 int ue7_starter() { // should act as main for excercise fufillment
     // to allow debugging with CLION
