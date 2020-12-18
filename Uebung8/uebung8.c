@@ -9,7 +9,6 @@ void arith_avg(int numbers[4]);
 int biggest_number(int numbers[5]);
 void pow_user_int();
 long pow(int a, int b);
-void calculator();
 int error = 0;
 char errormsg[100];
 int errorquest(){
@@ -128,7 +127,6 @@ float rechnet(char operation, float op1, float op2){
         case '^':
             res = pow((int)op1, (int)op2);
             break;
-
     }
     return res;
 }
