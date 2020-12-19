@@ -4,8 +4,10 @@
 
 
 int main() {
-    ue10_starter();
+    // to allow debugging with CLION
+    setbuf(stdout, 0);
 
+    ue10_starter();
 
     return 0;
 }
