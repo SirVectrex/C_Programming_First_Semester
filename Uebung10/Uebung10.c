@@ -3,7 +3,7 @@
 //
 #include "stdio.h"
 #include "string.h"
-void hanoi(int n);
+void bewege(char a, char b, char c, int n);
 void var_swap(int *var1, int *var2);
 void framed_output(char string[]);
 int getarraylenght(char string[]);
@@ -12,15 +12,19 @@ void change_sentence(char origin[], char destination[]);
 
 void ue10_starter(){
     int choice = 0;
-    printf("\n\nWelcome!\n\nSelect your desired program: \n--Kegel.(1)\n--Schaltjahr.(2)\n--Temperatur.(3)\n--Calculator (4) \n--- Exit (4)\n");
+    printf("\n\nWelcome!\n\nSelect your desired program:"
+           "\n--Building towers of Hanoi.(1)"
+           "\n--Show a framed Output.(2)"
+           "\n--Swap two variables.(3)"
+           "\n--Rebuild a sentence.(4) "
+           "\n--- Exit (5)\n");
     scanf_s("%i",&choice);
-
     switch (choice) {
         case 1:
             short disks = 0;
             printf("Please enter the amount of disks to be used for the tower of hanoi.");
-            scanf_s("%hu", disks);
-            hanoi(disks);
+            scanf_s("%hu", &disks);
+            bewege('A', 'B', 'C', disks);
             ue10_starter();
             break;
         case 2:
@@ -49,7 +53,6 @@ void ue10_starter(){
     }
 }
 
-
 void bewege(char a, char b, char c, int n)
 {
     if (n == 1) {
@@ -68,7 +71,20 @@ void var_swap(int *var1, int *var2){
 }
 
 void framed_output(char string[]){
-    printf("-");
+    // line one
+    printf("/");
+    for (int i = 0; i < getarraylenght(string)+2; ++i) {
+        printf("-");
+    }
+    printf("\\ \n");
+    //line two
+    printf("| %s | \n", string);
+    //line three
+    printf("\\");
+    for (int i = 0; i < getarraylenght(string)+2; ++i) {
+        printf("-");
+    }
+    printf("/");
 }
 
 int getarraylenght(char string[]){
