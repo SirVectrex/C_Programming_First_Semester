@@ -9,6 +9,6 @@ void bewege(char a, char b, char c, int n);
 void var_swap(int *var1, int *var2);
 void framed_output(char string[]);
 int getarraylenght(char string[]);
-
+void ue10_starter();
 
 #endif //PG1_UEBUNG10_H

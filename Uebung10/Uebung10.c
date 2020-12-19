@@ -34,7 +34,20 @@ void var_swap(int *var1, int *var2){
 }
 
 void framed_output(char string[]){
-    printf("-");
+    // line one
+    printf("/");
+    for (int i = 0; i < getarraylenght(string); ++i) {
+        printf("-");
+    }
+    printf("\\");
+    //line two
+    printf("| %s |", string);
+    //line three
+    printf("\\");
+    for (int i = 0; i < getarraylenght(string); ++i) {
+        printf("-");
+    }
+    printf("/");
 }
 
 int getarraylenght(char string[]){
