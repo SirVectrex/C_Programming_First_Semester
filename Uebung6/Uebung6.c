@@ -19,7 +19,7 @@ int ue6_starter() {
 
     int choice = 0;
     printf("\n\nWelcome!\n\nSelect your desired program: \n--Equation Solving.(1)\n--Decimal to Binary.(2)\n--Binary Addition.(3)\n--Logarithms.(4)\n--- Exit (5)\n");
-    scanf_s("%i",&choice);
+    scanf("%i",&choice);
 
     switch (choice) {
         case 1:
@@ -53,11 +53,11 @@ int ue6_starter() {
 void ue_6_equation(){
     double a,b,c, result;
     printf("Welcome - Please enter a,b,c");
-    scanf_s("%lf", &a);
+    scanf("%lf", &a);
     printf("B Please");
-    scanf_s("%lf", &b);
+    scanf("%lf", &b);
     printf("C Please");
-    scanf_s("%lf", &c);
+    scanf("%lf", &c);
     if(a==0){
         if(b == 0){
             if (c == 0){
@@ -88,9 +88,9 @@ void ue_6_equation(){
 void dec2bin(){
     int a= +2147483646, b = 64;
     printf("Welcome - Please enter the integer to convert!");
-    scanf_s("%d", &a);
+    scanf("%d", &a);
     printf("Please enter the amount of bits to receive");
-    scanf_s("%d", &b);
+    scanf("%d", &b);
 
     for (int i = 0; i < b; ++i) {
         printf("Binary Number (2^%d): %d\n", i, a%2);
@@ -101,7 +101,7 @@ void dec2bin(){
 void binarysum(){
     int length = 0;
     printf("Please enter two binary numbers and give the lenght of bits in advance:");
-    scanf_s("%i", &length);
+    scanf("%i", &length);
     printf("Please enter the first binary number and start with the first (MSB) bit.");
     long x = binary2dec(length);
     printf("Please enter the second binary number and start with the first (MSB) bit.");
@@ -122,7 +122,7 @@ long binary2dec(int lenght){
     long res = 0;
     for (int i = 1; i <= lenght; ++i) {
         printf("\nPlease enter the next digit: ");
-        scanf_s("%i", &input);
+        scanf("%i", &input);
         if(input == 1) {
             res = res + pow(2, lenght - i);
         }
@@ -137,10 +137,11 @@ long binary2dec(int lenght){
 void logarithmus(){
     double a, b;
     printf("Please enter the Logarithm and the Base");
-    scanf_s("%lf", &a);
+    scanf("%lf", &a);
     printf("Please enter the Base");
-    scanf_s("%lf", &b);
-    printf("%lf.2",log10(a)/log10(b));
+    scanf("%lf", &b);
+    float erg = log10(a) / log10(b);
+    printf("%lf.2",erg);
 }
 
 

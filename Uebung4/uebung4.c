@@ -19,7 +19,7 @@ void ue4_starter() {
     setbuf(stdout, 0);
     int choice = 0;
     printf("\nWelcome!\n\nSelect your desired program: \n--Order Classification.(1)\n--Arithmetic Average.(2)\n--Fibonacci.(3)\n--Floyd-Triangle.(4)\n---Exit.(5)\n");
-    scanf_s("%i",&choice);
+    scanf("%i",&choice);
 
     switch (choice) {
         case 1:
@@ -51,13 +51,13 @@ void ue4_starter() {
 void order_classification(){
     int lenght=0, input=0, positive=0, negative=0, nullis = 0, gerade=0, ungerade=0, reihenfolge=0, lastinput=0;
     printf("\nYou have selected to find more information about your inputs! \nFirstly we need to know, how many numbers you`d love to input");
-    scanf_s("%i", &lenght);
+    scanf("%i", &lenght);
     printf("Please start entering numbers and hit enter after each one.\n");
 
     for(int count = 0; count < lenght; count++){
         printf("---%i to go\n", lenght-count);
         printf("Next input: ");
-        scanf_s("%i", &input);
+        scanf("%i", &input);
         if(input == 0 ){
             nullis++;
         }
@@ -106,7 +106,7 @@ void arithmetic_average(){
 
     while (input != 0){
         printf("\nNext or enter 0 to cancel. - ");
-        scanf_s("%i", &input);
+        scanf("%i", &input);
         if(input == 0) {break;}
         sum = sum + input;
         numbers++;
@@ -125,7 +125,7 @@ void arithmetic_average(){
 void fibonacci(){
     int lenght, counter = 1, t1 = 0, t2 = 1, nextTerm ;
     printf("\nYou have selected to output the algorithm of fibonacci for a certain lenght. \nFirstly we need to know the lenght.\n");
-    scanf_s("%i", &lenght);
+    scanf("%i", &lenght);
     for (counter = 1; counter <= lenght+1; ++counter) {
         printf("%d, ", t1);
         nextTerm = t1 + t2;
@@ -137,7 +137,7 @@ void fibonacci(){
 void floyd(){
     int sum = 1, lenght;
     printf("\nYou have selected to find a min and max value in a row \nFirstly we need to know, how many numbers you`d love to input");
-    scanf_s("%i", &lenght);
+    scanf("%i", &lenght);
     for(int counter = 1; counter < lenght+1; counter++){
         for(int counter2 = 0; counter2 < counter; counter2++){
             printf("%i - ", sum);

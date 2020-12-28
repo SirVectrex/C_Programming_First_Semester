@@ -18,7 +18,7 @@ void ue5_starter() {
     setbuf(stdout, 0);
     int choice = 0;
     printf("\n\nWelcome!\n\nSelect your desired program: \n--Shape Builder.(1)\n--Teiler Info.(2)\n--Lowest Common Multiple.(3)\n--Binary 2 Decimal.(4)\n--Int to Ascii.(5)\n--- Exit (6)\n");
-    scanf_s("%i",&choice);
+    scanf("%i",&choice);
 
     switch (choice) {
         case 1:
@@ -103,7 +103,7 @@ void shapes(){
 void teiler(){
     int lenght=0,x=1, primzahl= 0;
     printf("\nYou have selected to find all divisors of a positive number. \nFirstly we need that very number: ");
-    scanf_s("%i", &lenght);
+    scanf("%i", &lenght);
     while (x <= lenght){
         if ((lenght % x) == 0){
             printf("\n%i ist ein Teiler", x);
@@ -124,9 +124,9 @@ void kgv(){
     long result;
     printf("\n\nWelcome to easy common multiple finding!\nAll we need is a and b.");
     printf("\nPlease enter a:\n");
-    scanf_s("%i",&a);
+    scanf("%i",&a);
     printf("Please enter b: \n");
-    scanf_s("%i", &b);
+    scanf("%i", &b);
 
     while (count <= b) {
         if ((count * b) % a == 0){
@@ -143,11 +143,11 @@ void binary2dec1(){
     int lenght = 0, input= 0 ;
     long res = 0;
     printf("Please enter the amount of digits to enter: \n");
-    scanf_s("%i", &lenght );
+    scanf("%i", &lenght );
 
     for (int i = 1; i <= lenght; ++i) {
         printf("\nPlease enter the next digit: ");
-        scanf_s("%i", &input);
+        scanf("%i", &input);
         if(input == 1) {
             res = res + pow(2, lenght - i);
         }
@@ -163,7 +163,7 @@ void binary2dec1(){
 void int2asci(){
     int number;
     printf("Welcome to your favorite int to Ascii Converter! \nPlease note, that special language characters, like \"Ä\",\"Ü\" and \"Ö\" will be counted as other characters. \nPlease enter the asci number: ");
-    scanf_s("%i", &number);
+    scanf("%i", &number);
     printf("\nCharacter is: %c and it is a ", number);
     if (64 < number  && number  < 91) {
         printf("Capital Letter\n");

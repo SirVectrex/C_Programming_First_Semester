@@ -11,7 +11,7 @@ int ue7_starter() { // should act as main for excercise fufillment
 
     int choice = 0;
     printf("\n\nWelcome!\n\nSelect your desired program: \n--Kegel.(1)\n--Schaltjahr.(2)\n--Temperatur.(3)\n--Calculator (4) \n--- Exit (4)\n");
-    scanf_s("%i",&choice);
+    scanf("%i",&choice);
 
     switch (choice) {
         case 1:
@@ -41,7 +41,7 @@ int ue7_starter() { // should act as main for excercise fufillment
 void kegel(){
     int lenght = 0, innerspaces = 1, outerspace;
     printf("Please enter the height of the pyramid");
-    scanf_s("%d", &lenght);
+    scanf("%d", &lenght);
     outerspace = lenght+1;
     for (int i = 0; i <= lenght; ++i) {
         if(i == lenght){
@@ -69,7 +69,7 @@ void kegel(){
 void schaltjahr(){
     int year= 2020;
     printf("Please enter the year to be examined. -");
-    scanf_s("%i", &year);
+    scanf("%i", &year);
     if ((year%4) == 0)
         if ((year %100)!=0 && (year %100)!=0 ){
             printf("Yes it is a schaltjahr! \n");
@@ -79,7 +79,7 @@ void schaltjahr(){
 void temperature(){
     double temperature;
     printf("Please enter the temperature to convert from °Celsius to Fahrenheit and Kelvin");
-    scanf_s("%lf", &temperature);
+    scanf("%lf", &temperature);
     if (temperature < -245){
         printf("Please enter a temperature that is actually existant.");
     }

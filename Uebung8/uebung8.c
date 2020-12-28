@@ -23,23 +23,26 @@ int ue8_starter() {
 
     int choice = 0;
     printf("\n\nWelcome!\n\nSelect your desired program: \n--Average of numbers.(1)\n--Biggest of five.(2)\n--Pows.(3)\n-- Calculator (4)\n--- Exit (5)");
-    scanf_s("%i",&choice);
+    scanf("%i",&choice);
 
     switch (choice) {
-        case 1:
-            int case1_numbers[4] = {1,2,3,4};
+        case 1: {
+            int case1_numbers[4] = {1, 2, 3, 4};
             arith_avg(case1_numbers);
             ue8_starter();
             break;
-        case 2:
-            int case2_numbers[5] = {1,2,3,4,5};
+        }
+        case 2: {
+            int case2_numbers[5] = {1, 2, 3, 4, 5};
             printf("The biggest number is: %d", biggest_number(case2_numbers));
             ue8_starter();
             break;
-        case 3:
+        }
+        case 3: {
             pow_user_int();
             ue8_starter();
             break;
+        }
         case 4:
             rechner_starten();
             ue8_starter();
@@ -80,9 +83,9 @@ void pow_user_int(){
     int a, b;
     // TO DO: ADD USER INTERACTION
     printf("Please enter the two operands to pow. Start with base a.");
-    scanf_s("%d", &a);
+    scanf("%d", &a);
     printf("\nAnd b:");
-    scanf_s("%d", &b);
+    scanf("%d", &b);
     printf("\nResult is: %d", pow(a,b));
     if(errorquest() == 1){
         printf("Watch out - an Error has occured!");
@@ -108,12 +111,12 @@ void rechner_starten(){
     float number1, number2;
     printf("Welcome! What arithmetic operation do you want to do?('+', '-', '*', '/', '^') ");
     char operation = '+';
-    scanf_s(" %c", &operation);
+    scanf(" %c", &operation);
     printf("%c", operation);
     printf("\nPlease enter the two operands. Start with a.");
-    scanf_s("%f", &number1);
+    scanf("%f", &number1);
     printf("\nNext one:");
-    scanf_s("%f", &number2);
+    scanf("%f", &number2);
     printf("Result: %f", rechnet(operation, number1, number2));
 }
 

@@ -18,31 +18,35 @@ void ue10_starter(){
            "\n--Swap two variables.(3)"
            "\n--Rebuild a sentence.(4) "
            "\n--- Exit (5)\n");
-    scanf_s("%i",&choice);
+    scanf("%i",&choice);
     switch (choice) {
-        case 1:
+        case 1: {
             short disks = 0;
             printf("Please enter the amount of disks to be used for the tower of hanoi.");
-            scanf_s("%hu", &disks);
+            scanf("%hu", &disks);
             bewege('A', 'B', 'C', disks);
             ue10_starter();
             break;
-        case 2:
+        }
+        case 2: {
             char message[] = "OTH-Regensburg";  //Static Sample Text
             framed_output(message);
             ue10_starter();
             break;
-        case 3:
+        }
+        case 3: {
             int var1 = 10, var2 = 20;
             var_swap(&var1, &var2);
             ue10_starter();
             break;
-        case 4:
+        }
+        case 4: {
             char oldmessage[] = "Hey. Wie geht es dir.";
             char newmessage[100];
             change_sentence(oldmessage, newmessage);
             ue10_starter();
             break;
+        }
         case 5:
             printf("Bye");
             break;

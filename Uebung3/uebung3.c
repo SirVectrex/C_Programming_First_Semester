@@ -19,7 +19,7 @@ void triangles();
 void ue3_starter() {
     int choice = 0;
     printf("\nWelcome!\n\nSelect your desired program: \n--Triangle Info.(1)\n--Minimum-Maximum Searches.(2)\n--Equation solving.(3)\n--Calculator.(4)\n---Exit.(5)\n");
-    scanf_s("%i",&choice);
+    scanf("%i",&choice);
 
     switch (choice) {
         case 1:
@@ -54,9 +54,9 @@ void triangles(){
     printf("\nYou have to learn more about triangles \nEach triangle has 3 sides. Please enter the lenght of each one \nLets start with number one: (cm)\n");
     scanf("%f", &x);
     printf("Please enter number two: \n");
-    scanf_s("%f",&y);
+    scanf("%f",&y);
     printf("Please enter number three: \n");
-    scanf_s("%f",&z);
+    scanf("%f",&z);
     if(x==y&&y==z){
         printf("equilateral");
     }
@@ -89,14 +89,14 @@ void triangles(){
 void minmax(){
     int lenght=0, min, max, input;
     printf("\nYou have selected to find a min and max value in a row \nFirstly we need to know, how many numbers you`d love to input");
-    scanf_s("%i", &lenght);
+    scanf("%i", &lenght);
     printf("Please start entering numbers and hit enter after each one. \nFirst:");
-    scanf_s("%i", &input);
+    scanf("%i", &input);
     min = input;
     max = input;
     for(int count = 0; count < lenght-1; count++){
         printf("Next:");
-        scanf_s("%i", &input);
+        scanf("%i", &input);
         min = ((min > input) ? input : min);
         max = ((max < input) ? input : max);
     }
@@ -113,9 +113,9 @@ void equation(){
     float a, b, x;
     printf("\n\nWelcome to your very smart equation solver!\n\nThe equation to be solved is f(x)= ax + b = 0  \nAll we need is a and b.");
     printf("\nPlease enter a:\n");
-    scanf_s("%f",&a);
+    scanf("%f",&a);
     printf("Please enter b: \n");
-    scanf_s("%f",&b);
+    scanf("%f",&b);
     if(a == 0){ printf("x is independent of the result %f", b);}
     else{
         x = -b/a;
@@ -126,11 +126,11 @@ void equation(){
 void calculator(){
     int x=0, y=0, choice = 0;
     printf("\n\nWelcome to your very smart calculator of choice!\n\nYou have selected to calculate sum.(1), sub.(2), mult.(3) or div.(4) \nPlease select your mathmatical operation of choice\n");
-    scanf_s("%i",&choice);
+    scanf("%i",&choice);
     printf("We also need 2 integers from you to work with. \nPlease enter number one:\n");
-    scanf_s("%i",&x);
+    scanf("%i",&x);
     printf("Please enter number two: \n");
-    scanf_s("%i",&y);
+    scanf("%i",&y);
     switch (choice) {
         case 1:
             printf("You chose to summarize.\n");
