@@ -7,6 +7,7 @@
 #include "Uebung10/Uebung10.h"
 #include "Uebung11/uebung11.h"
 #include "Zusatzuebung2/zusatzuebung.h"
+#include "Uebung12/buch.h"
 
 int main() {
     // to allow debugging with CLION

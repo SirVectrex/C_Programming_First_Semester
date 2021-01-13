@@ -32,11 +32,13 @@ int suche_autor(char autor[]);
 int menu() {
     // Buecherliste will serve as main list including the amount of elements
     int choice = 0;
+
     printf("\nWelcome!\n\nSelect your desired program:"
            "\n--Show all saved Books.(1)"
            "\n--Add a new Book.(2)"
            "\n--Show the oldest Book available.(3)"
            "\n--Search for an author.(4) "
+           "\n--Clear the screen.(5)"
            "\n--- Exit (0)\n");
     scanf("%i", &choice);
     switch (choice) {
@@ -46,17 +48,25 @@ int menu() {
             break;
         }
         case 2: {
-            menu();
             Bucheintrag();
+            menu();
             break;
         }
         case 3: {
+            Buch_alt();
             menu();
             break;
         }
-        case 4:
+        case 4: {
+            char searchquery[80];
+            printf("What author are you searching for?");
+            fgets(searchquery, 80, stdin);
+            suche_autor(searchquery);
             menu();
             break;
+        }
+        case 5:
+            clrscr();
         case 0:
             printf("Bye");
             break;
@@ -93,3 +103,32 @@ void zeige_Liste(){
     }
 }
 
+void Buch_alt(){
+    int oldestentry = 0, oldestyear = 2300;
+    for (int i = 0; i < Buecherliste.anzahl; ++i) {
+        if (Buecherliste.buchliste[i].Veroeffentlichungsjahr < oldestyear){
+            oldestentry = i;
+        }
+    }
+    printf("\n-Oldest Entry:"
+           "\n--Title: %s"
+           "\n--Author: %s"
+           "\n--Publisher: %s"
+           "\n--Year of Publishment: %s",Buecherliste.buchliste[oldestentry].Titel, Buecherliste.buchliste[oldestentry].Autor, Buecherliste.buchliste[oldestentry].Herausgeber, Buecherliste.buchliste[oldestentry].Veroeffentlichungsjahr);
+}
+
+int suche_autor(char autor[]){
+    int book_of_choice = 0;
+    for (int i = 0; i < Buecherliste.anzahl; ++i) {
+        if( strcmp(autor, Buecherliste.buchliste[i].Autor) == 1){
+            book_of_choice = i;
+            break;
+        }
+    }
+    printf("\n-Author found in:"
+           "\n--Title: %s"
+           "\n--Author: %s"
+           "\n--Publisher: %s"
+           "\n--Year of Publishment: %s",Buecherliste.buchliste[book_of_choice].Titel, Buecherliste.buchliste[book_of_choice].Autor, Buecherliste.buchliste[book_of_choice].Herausgeber, Buecherliste.buchliste[book_of_choice].Veroeffentlichungsjahr);
+
+}
