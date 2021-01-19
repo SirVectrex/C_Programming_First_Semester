@@ -61,11 +61,13 @@ int menu() {
             char searchquery[80];
             printf("What author are you searching for?");
             fgets(searchquery, 80, stdin);
+            getchar();
             suche_autor(searchquery);
             menu();
             break;
         }
         case 5:
+            printf("you nutte");
             clrscr();
         case 0:
             printf("Bye");
@@ -77,7 +79,8 @@ int menu() {
     }
 }
 void Bucheintrag(){
-    printf("Please enter the data needed to create a new book-entry in your list. Lets begin with the title: ");
+    printf("Please enter the data needed to create a new book-entry in your list. Lets begin with the title: \n");
+    getchar();
     fgets(Buecherliste.buchliste[Buecherliste.anzahl].Titel, 80, stdin);
     printf("\nContinue with the Author: ");
     fgets(Buecherliste.buchliste[Buecherliste.anzahl].Autor, 100, stdin);
@@ -85,9 +88,12 @@ void Bucheintrag(){
     fgets(Buecherliste.buchliste[Buecherliste.anzahl].Herausgeber,80,stdin);
     printf("\nPlease finish off with the year of publishment");
     scanf("%i", &Buecherliste.buchliste[Buecherliste.anzahl].Veroeffentlichungsjahr);
+    Buecherliste.anzahl++;
+    getchar();
     printf("Do you wish to enter another one? ");
     char scanfres = 'N';
-    if(scanf("%c", &scanfres )== 'Y'){
+    scanf("%c", &scanfres );
+    if(scanfres == 'Y'){
         Bucheintrag();
     }
     else{clrscr();}
@@ -99,7 +105,7 @@ void zeige_Liste(){
                "\n--Title: %s"
                "\n--Author: %s"
                "\n--Publisher: %s"
-               "\n--Year of Publishment: %s", i, Buecherliste.buchliste[i].Titel, Buecherliste.buchliste[i].Autor, Buecherliste.buchliste[i].Herausgeber, Buecherliste.buchliste[i].Veroeffentlichungsjahr);
+               "\n--Year of Publishment: %d", i, Buecherliste.buchliste[i].Titel, Buecherliste.buchliste[i].Autor, Buecherliste.buchliste[i].Herausgeber, Buecherliste.buchliste[i].Veroeffentlichungsjahr);
     }
 }
 
@@ -112,15 +118,15 @@ void Buch_alt(){
     }
     printf("\n-Oldest Entry:"
            "\n--Title: %s"
-           "\n--Author: %s"
-           "\n--Publisher: %s"
-           "\n--Year of Publishment: %s",Buecherliste.buchliste[oldestentry].Titel, Buecherliste.buchliste[oldestentry].Autor, Buecherliste.buchliste[oldestentry].Herausgeber, Buecherliste.buchliste[oldestentry].Veroeffentlichungsjahr);
+           "--Author: %s"
+           "--Publisher: %s"
+           "--Year of Publishment: %d",Buecherliste.buchliste[oldestentry].Titel, Buecherliste.buchliste[oldestentry].Autor, Buecherliste.buchliste[oldestentry].Herausgeber, Buecherliste.buchliste[oldestentry].Veroeffentlichungsjahr);
 }
 
 int suche_autor(char autor[]){
     int book_of_choice = 0;
     for (int i = 0; i < Buecherliste.anzahl; ++i) {
-        if( strcmp(autor, Buecherliste.buchliste[i].Autor) == 1){
+        if( strcmp(autor, Buecherliste.buchliste[i].Autor) > 0){
             book_of_choice = i;
             break;
         }
@@ -129,6 +135,6 @@ int suche_autor(char autor[]){
            "\n--Title: %s"
            "\n--Author: %s"
            "\n--Publisher: %s"
-           "\n--Year of Publishment: %s",Buecherliste.buchliste[book_of_choice].Titel, Buecherliste.buchliste[book_of_choice].Autor, Buecherliste.buchliste[book_of_choice].Herausgeber, Buecherliste.buchliste[book_of_choice].Veroeffentlichungsjahr);
+           "\n--Year of Publishment: %d",Buecherliste.buchliste[book_of_choice].Titel, Buecherliste.buchliste[book_of_choice].Autor, Buecherliste.buchliste[book_of_choice].Herausgeber, Buecherliste.buchliste[book_of_choice].Veroeffentlichungsjahr);
 
 }

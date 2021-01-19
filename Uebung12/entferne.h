@@ -4,5 +4,5 @@
 
 #ifndef PG1_ENTFERNE_H
 #define PG1_ENTFERNE_H
-char *entferne(const char *str);
+const char *entferne(const char *str);
 #endif //PG1_ENTFERNE_H

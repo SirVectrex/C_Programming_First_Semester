@@ -23,3 +23,4 @@ void trim(char *mystring[]){
     }
 
 }
+

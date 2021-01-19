@@ -7,12 +7,13 @@
 #include "Uebung10/Uebung10.h"
 #include "Uebung11/uebung11.h"
 #include "Zusatzuebung2/zusatzuebung.h"
-#include "Uebung12/buch.h"
+#include "Uebung12/entferne.h"
+#include "Uebung13/uebung13.h"
+
 
 int main() {
     // to allow debugging with CLION
     setbuf(stdout, 0);
-    calculate_for_aliens();
-
+    strtest();
     return 0;
 }
