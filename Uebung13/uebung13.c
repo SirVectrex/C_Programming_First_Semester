@@ -17,7 +17,7 @@ int findTarget(char *target, char nameptr[][80], int size)
 }
 
 // for(;;) = Endlosschleife
-void tauschen(const char * str, const char * old, const char * new){
+void tauschen(const char * str, const char * old, const char * new) {
     // scanning for the amount of old in str
     char *currentelement;
     int amount = 0;
@@ -29,23 +29,67 @@ void tauschen(const char * str, const char * old, const char * new){
         amount++;
         firstrun = 1;
     } while (currentelement != NULL);
-    amount = amount -1;
+    amount = amount - 1;
     printf("Amount = %d", amount);
 
     //allocate a string with a needed lenght // calloc for terminating 0
-    char * newstring = (char*)calloc(strlen(str + (amount * (strlen(old)-strlen(new)))+1));
+    char *newstring = (char *) calloc(strlen(str + (amount * (strlen(old) - strlen(new))) + 1), sizeof(char));
 
     // copy old elements into the new one
-    strcpy()
+    char *ptr;
+    ptr = str;
+    const char *tmpptr = str;
+    char *newptr = newstring;
+    for (;;) {
+        ptr = strstr(ptr, old);
+        if (ptr != NULL) {
+            strncpy(newptr, tmpptr, ptr - tmpptr);
+            newptr += (ptr - tmpptr);
+            strncpy(newptr, new, strlen(new));
+            newptr += strlen(new);
+            ptr += (strlen(old));
+            tmpptr = ptr;
+        }
+        printf("%s", newstring);
+    }
+}
 
+void CeasersEncryptionMachine(char * toedit, int key){
+    printf("Raw String: %s\n", toedit);
+    for (int i = 0; i < strlen(toedit); ++i) {
+        if (toedit[i] + key > 122){
+            toedit[i] = toedit[i] + key - 25;
+        }
+        else{
+            toedit[i] = toedit[i] + key;
+        }
+    }
+    printf(("New string: - %s"),toedit);
+
+}
+
+void CeasersDecryptionMachine(char * toedit, int key){
+    printf("Raw String: %s\n", toedit);
+    for (int i = 0; i < strlen(toedit); ++i) {
+        if (toedit[i] + key < 97){
+            toedit[i] = toedit[i] - key + 25;
+        }
+        else{
+            toedit[i] = toedit[i] - key;
+        }
+    }
+    printf(("New string: - %s"),toedit);
 
 }
 
 void strtest(){
     const char str[50] = "is the this of this";
-    const char this[50] = "this";
+    const char this[6] = "this";
     const char new[5] = "newthis";
-    tauschen(str, this, new);
+    CeasersEncryptionMachine(this, 6);
+    printf("\nAfter Method 1:%s\n",this);
+    CeasersDecryptionMachine(this, 6);
+    printf("\nAfter method: %s", this);
 }
 
 
